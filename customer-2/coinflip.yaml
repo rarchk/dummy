@@ -8,8 +8,7 @@ kind: Workflow
 metadata:
   generateName: coinflip-
   annotations:
-    argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    argocd.argoproj.io/hook: Sync
 spec:
   entrypoint: coinflip
   templates:
