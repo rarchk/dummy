@@ -1,0 +1,5 @@
+namePrefix: nebula-api-call
+
+
+resources:
+- post-sync-job.yaml

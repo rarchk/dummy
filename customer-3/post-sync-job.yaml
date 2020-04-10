@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: after
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: nebulastatus
+        image: alpine:latest
+        command: ["curl", "http://nebula:8000/api/v1/k8s"]
+      restartPolicy: Never
+  backoffLimit: 0
